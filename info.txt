@@ -1,0 +1,19 @@
+//create model 
+//create carpeta midelware migraions models seeders services tools
+// Dentro de src/graphql crear /resolvers 
+// crear carpeta config con el archivo database.ts
+// 
+
+
+
+your_project/
+
+├── user/   (Folder for data models)
+
+│   └── resolverUser.js  (Model for user data)
+│   └── typeDefsUser.js  (Model for user data)
+│   └── modelUser.js  (Model for user data)
+
+
+
+└── ...  

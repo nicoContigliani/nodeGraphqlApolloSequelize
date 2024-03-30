@@ -1,9 +1,12 @@
 import express from 'express';
-import User from '../models/user.model';
+// import User from '../models/user.model';
 import sequelize from '../config/database';
 import { ApolloServer } from 'apollo-server-express';
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { gql } from 'graphql-tag';
+// import { gql } from 'graphql-tag';
+import resolvers from './graphql/resolvers/resolvers';
+import typeDefs from './graphql/typeDefs/typeDefs';
+
 
 async function syncModels() {
   await sequelize.sync(); // Sincroniza los modelos con la base de datos
@@ -16,44 +19,6 @@ const port = 3000;
 
 app.use(express.json());
 
-const typeDefs = gql`
-  type User {
-    id: Int!
-    name: String!
-    email: String!
-  }
-
-  type Query {
-    users: [User!]!
-    user(id: Int!): User
-  }
-
-  type Mutation {
-    createUser(name: String!, email: String!, password: String!): User
-    updateUser(id: Int!, name: String!, email: String!): User
-    deleteUser(id: Int!): Boolean
-  }
-`;
-
-const resolvers = {
-  Query: {
-    users: async () => await User.findAll(),
-    user: async (_: any, { id }: any) => await User.findByPk(id),
-  },
-  Mutation: {
-    createUser: async (_: any, { name, email, password }: any) => await User.create({ name, email, password }),
-    updateUser: async (_: any, { id, name, email }: any) => {
-      const user = await User.findByPk(id);
-      if (user) {
-        user.name = name;
-        user.email = email;
-        await user.save();
-      }
-      return user;
-    },
-    deleteUser: async (_: any, { id }: any) => await User.destroy({ where: { id } }) > 0,
-  },
-};
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
 
@@ -70,3 +35,5 @@ async function startServer() {
 }
 
 startServer();
+
+
