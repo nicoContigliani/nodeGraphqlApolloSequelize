@@ -17,3 +17,13 @@ your_project/
 
 
 └── ...  
+
+
+
+crea el modelo y la migración 
+corre  bash en entities/ 
+ojo model.ts tiene cambios    
+///TODO este bash es solo en el principio por que puede borrar las politicas de negocio. 
+crea carpeta entidad  -> entidad.model.ts / entidad.resolvers.ts / entidad.typDefs.ts
+if !existe carpeta  graphql creala con dos archivos resolvers/resolvers.ts y typeDefs/typesDefs.ts
+target_folder="/home/nico/Atalaya/Estudio/GraphQL/todo/src/entities/Todo/"

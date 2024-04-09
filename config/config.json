@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "postgres",
+    "host": "127.0.0.1",
+    "database": "sports",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": "postgres",
+    "database": "sports",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": "postgres",
+    "database": "sports",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
+

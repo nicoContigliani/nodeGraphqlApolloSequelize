@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../../config/database';
+import sequelize from '../../../config/database';
 
 export interface UserAttributes {
   id?: number;
@@ -13,6 +13,12 @@ class User extends Model<UserAttributes> {
   public name!: string;
   public email!: string;
   public password!: string;
+
+  // static associate(models: any | any[]) {
+
+  
+  // }
+
 
   // ... (relaciones con otros modelos)
 }

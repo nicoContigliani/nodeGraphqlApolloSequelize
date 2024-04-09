@@ -29,8 +29,14 @@ async function startServer() {
   server.applyMiddleware({ app });
 
   app.listen(port, () => {
+    console.log("***************************")
+    console.log("***************************")
     console.log(`Servidor de ejemplo escuchando en el puerto ${port}!`);
+    console.log("***************************")
+    console.log("***************************")
     console.log(`Punto final de GraphQL en http://localhost:${port}/graphql`);
+    console.log("***************************")
+    console.log("***************************")
   });
 }
 

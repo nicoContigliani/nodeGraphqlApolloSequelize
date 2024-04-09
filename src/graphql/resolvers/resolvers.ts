@@ -1,4 +1,5 @@
-import {userResolver} from '../../user/user.resolvers'; // Import from the file where you defined the userResolvers
+import {userResolver} from '../../entities/user/user.resolvers'; // Import from the file where you defined the userResolvers
+
 
 const resolvers = {
     Query: {
